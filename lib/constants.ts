@@ -17,7 +17,7 @@ export const CONTACT = {
   },
   phone: {
     label: "Make a call",
-    subtitle: "08140625409",
+    subtitle: "+234 814 062 5409",
     value: "tel:+2348140625409",
   },
   email: {
@@ -27,8 +27,8 @@ export const CONTACT = {
   },
   meeting: {
     label: "Book a meeting",
-    subtitle: "Schedule on calendly",
-    value: "https://calendly.com/danieloweibo",
+    subtitle: "Schedule on Calendly",
+    value: "Daniel Oweibo on Calendly",
   },
 };
 

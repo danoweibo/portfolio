@@ -8,6 +8,7 @@ import {
   ChatIcon,
   EmailIcon,
   MeetingIcon,
+  WhatsAppIcon,
 } from "@/components/icons";
 import { LiveChat } from "./live-chat";
 import type { ModalType, SubModalType } from "@/lib/types";
@@ -77,11 +78,11 @@ export function ContactModals({
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                   >
-                    <ChatIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" />
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">
+                    <ChatIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
+                    <h3 className="mb-2 text-xl font-bold text-black">
                       {CONTACT.chat.label}
                     </h3>
-                    <p className="mb-6 text-sm text-gray-500">
+                    <p className="text-md mb-6 font-semibold text-gray-500">
                       {CONTACT.chat.subtitle}
                     </p>
                     <div className="flex gap-3">
@@ -91,12 +92,12 @@ export function ContactModals({
                         rel="noopener noreferrer"
                         className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
                       >
-                        <ChatIcon className="h-4 w-4" />
+                        <WhatsAppIcon className="h-4 w-4" />
                         Chat on WhatsApp
                       </a>
                       <button
                         onClick={() => setSubModal("liveChat")}
-                        className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+                        className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                       >
                         Open Live Chat
                       </button>
@@ -109,11 +110,11 @@ export function ContactModals({
             {/* ── Phone ─────────────────────────────────────────────────── */}
             {activeModal === "phone" && (
               <>
-                <PhoneIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" />
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
+                <PhoneIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
+                <h3 className="mb-2 text-xl font-bold text-black">
                   {CONTACT.phone.label}
                 </h3>
-                <p className="mb-6 text-2xl font-semibold text-gray-700">
+                <p className="text-md mb-6 font-semibold text-gray-500">
                   {CONTACT.phone.subtitle}
                 </p>
                 <div className="flex gap-3">
@@ -123,19 +124,19 @@ export function ContactModals({
                   >
                     {copiedKey === "phone" ? (
                       <>
-                        <Check className="h-4 w-4" /> Copied!
+                        <Check className="h-4 w-4" strokeWidth={3} /> Copied!
                       </>
                     ) : (
                       <>
-                        <Copy className="h-4 w-4" /> Copy to clipboard
+                        <Copy className="h-4 w-4" strokeWidth={3} /> Copy to
+                        clipboard
                       </>
                     )}
                   </button>
                   <a
                     href={CONTACT.phone.value}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                   >
-                    <PhoneIcon className="h-4 w-4" />
                     Call Now
                   </a>
                 </div>
@@ -145,11 +146,11 @@ export function ContactModals({
             {/* ── Email ─────────────────────────────────────────────────── */}
             {activeModal === "email" && (
               <>
-                <EmailIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" />
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
+                <EmailIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
+                <h3 className="mb-2 text-xl font-bold text-black">
                   {CONTACT.email.label}
                 </h3>
-                <p className="mb-6 text-lg font-medium break-all text-gray-700">
+                <p className="text-md mb-6 font-semibold break-all text-gray-500">
                   {CONTACT.email.subtitle}
                 </p>
                 <div className="flex gap-3">
@@ -159,19 +160,19 @@ export function ContactModals({
                   >
                     {copiedKey === "email" ? (
                       <>
-                        <Check className="h-4 w-4" /> Copied!
+                        <Check className="h-4 w-4" strokeWidth={3} /> Copied!
                       </>
                     ) : (
                       <>
-                        <Copy className="h-4 w-4" /> Copy to clipboard
+                        <Copy className="h-4 w-4" strokeWidth={3} /> Copy to
+                        clipboard
                       </>
                     )}
                   </button>
                   <a
                     href={CONTACT.email.value}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                   >
-                    <EmailIcon className="h-4 w-4" />
                     Mail Now
                   </a>
                 </div>
@@ -181,20 +182,19 @@ export function ContactModals({
             {/* ── Meeting ───────────────────────────────────────────────── */}
             {activeModal === "meeting" && (
               <>
-                <MeetingIcon className="mx-auto mb-4 h-12 w-12 text-gray-400" />
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
+                <MeetingIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
+                <h3 className="mb-2 text-xl font-bold text-black">
                   {CONTACT.meeting.label}
                 </h3>
-                <p className="mb-6 text-sm break-all text-gray-500">
+                <p className="mb-6 text-sm font-semibold break-all text-gray-500">
                   {CONTACT.meeting.value}
                 </p>
                 <a
                   href={CONTACT.meeting.value}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                 >
-                  <MeetingIcon className="h-4 w-4" />
                   Book Now
                 </a>
               </>

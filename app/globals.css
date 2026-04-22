@@ -17,7 +17,7 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(98.51% 0 0);
   --foreground: oklch(0.145 0 0);
 }
 
@@ -28,9 +28,8 @@
 
 @layer base {
   body {
-    background: var(--background);
-    background-image: url("/textures/tiles.png");
     color: var(--foreground);
+    background: var(--background);
     font-family: var(--font-jakarta);
     -webkit-font-smoothing: antialiased;
     @apply bg-background text-foreground;

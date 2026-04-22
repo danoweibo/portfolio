@@ -140,10 +140,10 @@ export function Navbar() {
                   <a
                     href={link.href}
                     className={cn(
-                      "relative text-sm font-medium transition-colors",
+                      "relative text-sm font-semibold transition-colors",
                       active
-                        ? "font-semibold text-gray-900"
-                        : "text-gray-700 hover:text-gray-900",
+                        ? "font-bold text-black"
+                        : "text-gray-800 hover:text-black",
                     )}
                   >
                     {link.label}
@@ -162,8 +162,8 @@ export function Navbar() {
             isOpen={dropdownOpen}
             onOpen={() => setDropdownOpen(true)}
             onClose={() => setDropdownOpen(false)}
-            dropdownRef={dropdownRef}
-            mobileBtnRef={mobileBtnRef}
+            dropdownRef={dropdownRef as React.RefObject<HTMLDivElement>}
+            mobileBtnRef={mobileBtnRef as React.RefObject<HTMLButtonElement>}
             animationDelay={NAV_DONE}
             hasMounted={hasMounted}
           />
@@ -177,8 +177,8 @@ export function Navbar() {
             isOpen={dropdownOpen}
             onOpen={() => setDropdownOpen(true)}
             onClose={() => setDropdownOpen(false)}
-            dropdownRef={dropdownRef}
-            mobileBtnRef={mobileBtnRef}
+            dropdownRef={dropdownRef as React.RefObject<HTMLDivElement>}
+            mobileBtnRef={mobileBtnRef as React.RefObject<HTMLButtonElement>}
             animationDelay={NAV_DONE}
             hasMounted={hasMounted}
           />

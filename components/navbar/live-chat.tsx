@@ -45,7 +45,9 @@ export function LiveChat({ onBack }: LiveChatProps) {
 
       {/* ── Replace this block with the Telegram-powered chat UI ── */}
       <div className="flex h-48 items-center justify-center">
-        <p className="text-lg font-semibold text-gray-900">Live Chat</p>
+        <p className="text-lg font-semibold text-gray-900">
+          Not supported yet!
+        </p>
       </div>
     </motion.div>
   );
