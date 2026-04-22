@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { LenisProvider } from "@/providers/lenis";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  bushmanFont,
+  dmFont,
+  gravesFont,
+  grotaFont,
+  passionFont,
+  jakartaFont,
+  tiktokFont,
+  playfairFont,
+} from "@/lib/fonts";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Daniel Oweibo — Fullstack Platform Developer",
@@ -59,9 +58,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bushmanFont.variable} ${dmFont.variable} ${gravesFont.variable} ${grotaFont.variable} ${passionFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} ${playfairFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <LenisProvider>
           <Navbar />
           {children}

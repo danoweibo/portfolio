@@ -10,6 +10,11 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT = {
+  chat: {
+    label: "Chat with me",
+    subtitle: "Send a message",
+    value: "https://wa.me/2348140625409",
+  },
   phone: {
     label: "Make a call",
     subtitle: "08140625409",
