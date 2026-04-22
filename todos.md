@@ -1,5 +1,10 @@
-### TODOS
+## TODOs
 
-- Implement `phoneng` for parsing the phone number in the Let's connect dropdown option.
-  - Reason #1: In case international clients want to reach me, my app can detect where they are coming from and generate the correct number for them, example "NG" clients "081...", "INTL" clients "+234...".
-  - Reason #2: A good way to test the library incase of future use cases.
+- Implement `phoneng` for parsing the phone number in the **Let's Connect** dropdown option.
+
+  **Reasons:**
+  1.  If international clients want to reach me, the app can detect their region and generate the correct format.
+      - `NG` clients → `081...`
+      - International clients → `+234...`
+
+  2.  Useful opportunity to test the library for potential future use cases.

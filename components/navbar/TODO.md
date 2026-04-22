@@ -1,0 +1,37 @@
+# TODO — Live Chat via Telegram
+
+## What needs to be built
+
+I will be working on the live chat interface later by connecting it to a Telegram API so that I will be able to live chat from Telegram to the user if they are active.
+
+---
+
+## File to edit
+
+**`live-chat-placeholder.tsx`** is the only file that needs to change.
+Everything else in the navbar system (modals, dropdown, mobile menu) remains untouched.
+
+---
+
+## Rough implementation plan
+
+1. **Telegram Bot setup**
+   - Create a bot via [@BotFather](https://t.me/BotFather) and obtain a bot token
+   - The operator (you) will receive and reply to messages through the Telegram app or desktop client
+
+2. **Backend / relay layer**
+   - Set up a lightweight server (e.g. Next.js Route Handler or a small Node service) that:
+     - Accepts incoming messages from the browser via WebSocket or polling
+     - Forwards them to the Telegram Bot API (`sendMessage` to your chat ID)
+     - Receives your replies via a Telegram webhook and pushes them back to the browser
+
+3. **`live-chat-placeholder.tsx` → `live-chat-widget.tsx`**
+   - Replace the centred placeholder with a real chat UI:
+     - Message thread display (visitor messages + operator replies)
+     - Text input + send button
+     - Connection status indicator (online / away / offline)
+     - Optional: typing indicator, read receipts
+
+4. **Presence / availability**
+   - Show the widget only (or show an "operator online" badge) when you are
+     actively available in Telegram, so visitors aren't left waiting

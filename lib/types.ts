@@ -6,3 +6,12 @@
  */
 
 export type IconProps = React.SVGProps<SVGSVGElement>;
+export type ModalType = "phone" | "email" | "meeting" | "chat" | null;
+export type SubModalType = "liveChat" | null;
+
+export interface DropdownItem {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  label: string;
+  subtitle: string;
+  action: () => void;
+}
