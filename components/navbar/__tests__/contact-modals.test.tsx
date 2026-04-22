@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, within } from "@testing-library/react";
-import { ContactModals } from "../contact-modals";
+import { describe, it, expect, vi } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { ContactModals } from "../modals";
 
 // document.body is the portal target — jsdom provides it automatically.
 

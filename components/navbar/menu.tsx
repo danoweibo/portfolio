@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { NAV_LINKS } from "@/lib/constants";
+import { Links } from "@/components/navbar/constants";
 import { motion, AnimatePresence } from "motion/react";
-import { SquigglyUnderline } from "@/components/navbar/squiggly-underline";
+import { SquigglyUnderline } from "@/components/navbar/squiggly";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -19,7 +19,7 @@ interface MobileMenuProps {
  * are accessible via the dropdown button in the main navbar bar.
  */
 export function MobileMenu({ isOpen, onClose, isLinkActive }: MobileMenuProps) {
-  const totalLinks = NAV_LINKS.length;
+  const totalLinks = Links.length;
 
   return (
     <AnimatePresence>
@@ -49,7 +49,7 @@ export function MobileMenu({ isOpen, onClose, isLinkActive }: MobileMenuProps) {
 
           {/* Nav links */}
           <nav className="flex flex-col items-center gap-8">
-            {NAV_LINKS.map((link, i) => {
+            {Links.map((link, i) => {
               const active = isLinkActive(link.href);
               return (
                 <motion.a

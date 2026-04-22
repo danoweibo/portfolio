@@ -25,14 +25,28 @@ vi.mock("motion/react", () => {
   const makeForwardRef = (tag: string) =>
     React.forwardRef(
       (
-        { children, ...props }: React.HTMLAttributes<HTMLElement> & Record<string, unknown>,
+        {
+          children,
+          ...props
+        }: React.HTMLAttributes<HTMLElement> & Record<string, unknown>,
         ref: React.Ref<HTMLElement>,
       ) => {
         // Strip motion-specific props before passing to DOM
         const {
-          initial, animate, exit, transition, whileHover, whileTap,
-          whileFocus, whileDrag, variants, layout, layoutId,
-          onAnimationStart, onAnimationComplete, onUpdate,
+          initial,
+          animate,
+          exit,
+          transition,
+          whileHover,
+          whileTap,
+          whileFocus,
+          whileDrag,
+          variants,
+          layout,
+          layoutId,
+          onAnimationStart,
+          onAnimationComplete,
+          onUpdate,
           ...domProps
         } = props as Record<string, unknown>;
 
@@ -73,22 +87,21 @@ vi.mock("next/image", () => ({
     width?: number;
     height?: number;
     className?: string;
-  }) =>
-    React.createElement("img", { src, alt, width, height, className }),
+  }) => React.createElement("img", { src, alt, width, height, className }),
 }));
 
-// ── @/lib/constants ───────────────────────────────────────────────────────────
-vi.mock("@/lib/constants", () => ({
-  SITE: {
+// ── @/components/navbar/constants ────────────────────────────────────────────────
+vi.mock("@/components/navbar/constants", () => ({
+  Site: {
     name: "Acme",
     logo: "/logo.svg",
   },
-  NAV_LINKS: [
+  Links: [
     { href: "#about", label: "About" },
     { href: "#work", label: "Work" },
     { href: "#contact", label: "Contact" },
   ],
-  CONTACT: {
+  Contact: {
     chat: {
       label: "Chat with us",
       subtitle: "Fast replies on WhatsApp",
@@ -131,4 +144,5 @@ vi.mock("@/components/icons", () => ({
   PartnerIcon: IconStub,
   MeetingIcon: IconStub,
   EmailIcon: IconStub,
+  WhatsAppIcon: IconStub,
 }));

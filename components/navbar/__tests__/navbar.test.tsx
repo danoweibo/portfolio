@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
-import { Navbar } from "../navbar";
+import { Navbar } from "@/components/navbar/navbar";
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -45,7 +45,9 @@ describe("Navbar — scroll", () => {
     renderNavbar();
     // No explicit assertion on class — just ensure the component renders
     // with scrollY = 0 without error
-    expect(screen.getAllByRole("button", { name: /let's connect/i })).toBeTruthy();
+    expect(
+      screen.getAllByRole("button", { name: /let's connect/i }),
+    ).toBeTruthy();
   });
 
   it("transitions to scrolled state when scrollY > 40", async () => {
@@ -55,7 +57,9 @@ describe("Navbar — scroll", () => {
       window.dispatchEvent(new Event("scroll"));
     });
     // Just assert no crash; visual changes are CSS-in-motion and not DOM-testable
-    expect(screen.getAllByRole("button", { name: /let's connect/i })).toBeTruthy();
+    expect(
+      screen.getAllByRole("button", { name: /let's connect/i }),
+    ).toBeTruthy();
   });
 });
 
@@ -125,6 +129,8 @@ describe("Navbar — resize", () => {
       });
       window.dispatchEvent(new Event("resize"));
     });
-    expect(screen.getAllByRole("button", { name: /let's connect/i })).toBeTruthy();
+    expect(
+      screen.getAllByRole("button", { name: /let's connect/i }),
+    ).toBeTruthy();
   });
 });

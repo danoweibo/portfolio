@@ -1,28 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { SITE, NAV_LINKS, CONTACT } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 import {
   PhoneIcon,
   ChatIcon,
   MeetingIcon,
   EmailIcon,
 } from "@/components/icons";
-import { useNavbar } from "./use-navbar";
-import { SquigglyUnderline } from "./squiggly-underline";
-import { NavDropdown } from "./nav-dropdown";
-import { MobileMenu } from "./mobile-menu";
-import { ContactModals } from "./contact-modals";
+import { cn } from "@/lib/utils";
+import { MobileMenu } from "@/components/navbar/menu";
+import { motion, AnimatePresence } from "motion/react";
+import { NavDropdown } from "@/components/navbar/dropdown";
+import { ContactModals } from "@/components/navbar/modals";
+import { useNavbar } from "@/components/navbar/hooks/navbar";
+import { SquigglyUnderline } from "@/components/navbar/squiggly";
+import { Contact, Links, Site } from "@/components/navbar/constants";
 import type { ModalType } from "@/lib/types";
 
 /**
  * Top-level Navbar component.
  *
  * Responsibilities:
- *  - Owns `activeModal` state (which contact modal is open)
+ *  - Owns `activeModal` state (which Contact modal is open)
  *  - Composes all sub-components: logo, desktop nav links, NavDropdown,
  *    MobileMenu hamburger, ContactModals portal
  *  - Delegates scroll / resize / intersection / copy logic to `useNavbar`
@@ -54,32 +54,32 @@ export function Navbar() {
   };
 
   // Delay so the "Let's Connect" button appears after the last nav link
-  const NAV_DONE = 0.2 + (NAV_LINKS.length - 1) * 0.08 + 0.4;
+  const NAV_DONE = 0.2 + (Links.length - 1) * 0.08 + 0.4;
 
   // Items passed to both dropdown variants
   const dropdownItems = [
     {
       icon: ChatIcon,
-      label: CONTACT.chat.label,
-      subtitle: CONTACT.chat.subtitle,
+      label: Contact.chat.label,
+      subtitle: Contact.chat.subtitle,
       action: () => setActiveModal("chat"),
     },
     {
       icon: PhoneIcon,
-      label: CONTACT.phone.label,
-      subtitle: CONTACT.phone.subtitle,
+      label: Contact.phone.label,
+      subtitle: Contact.phone.subtitle,
       action: () => setActiveModal("phone"),
     },
     {
       icon: EmailIcon,
-      label: CONTACT.email.label,
-      subtitle: CONTACT.email.subtitle,
+      label: Contact.email.label,
+      subtitle: Contact.email.subtitle,
       action: () => setActiveModal("email"),
     },
     {
       icon: MeetingIcon,
-      label: CONTACT.meeting.label,
-      subtitle: CONTACT.meeting.subtitle,
+      label: Contact.meeting.label,
+      subtitle: Contact.meeting.subtitle,
       action: () => setActiveModal("meeting"),
     },
   ];
@@ -106,15 +106,15 @@ export function Navbar() {
         {/* ── Logo ──────────────────────────────────────────────────────── */}
         <motion.a
           href="/"
-          aria-label={`${SITE.name} home`}
+          aria-label={`${Site.name} home`}
           initial={hasMounted ? false : { opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, delay: 0.1 }}
           className="shrink-0"
         >
           <Image
-            src={SITE.logo}
-            alt={SITE.name}
+            src={Site.logo}
+            alt={Site.name}
             width={40}
             height={40}
             className="h-10 w-10"
@@ -124,7 +124,7 @@ export function Navbar() {
         {/* ── Desktop nav links + dropdown ──────────────────────────────── */}
         <div className="hidden items-center gap-8 lg:flex">
           <ul className="flex items-center gap-8">
-            {NAV_LINKS.map((link, i) => {
+            {Links.map((link, i) => {
               const active = isLinkActive(link.href);
               return (
                 <motion.li

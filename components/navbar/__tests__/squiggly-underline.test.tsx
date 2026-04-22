@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
-import { SquigglyUnderline } from "../squiggly-underline";
+import { SquigglyUnderline } from "@/components/navbar/squiggly";
 
 // motion/react and framer-motion are mocked in vitest.setup.ts (see root config)
 describe("SquigglyUnderline", () => {
@@ -19,7 +19,7 @@ describe("SquigglyUnderline", () => {
     const { container } = render(<SquigglyUnderline />);
     const path = container.querySelector("path");
     expect(path).toBeTruthy();
-    expect(path?.getAttribute("stroke")).toBe("#7043EC");
+    expect(path?.getAttribute("stroke")).toBe("#000000");
   });
 
   it("SVG preserves aspect ratio with 'none'", () => {

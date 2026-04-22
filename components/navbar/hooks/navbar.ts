@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from "react";
-import { NAV_LINKS } from "@/lib/constants";
+import { Links } from "@/components/navbar/constants";
 
 export function useNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +35,7 @@ export function useNavbar() {
   useEffect(() => {
     if (!hasMounted) return;
 
-    const sectionIds = NAV_LINKS.map((l) => l.href.replace(/^#/, "")).filter(
+    const sectionIds = Links.map((l) => l.href.replace(/^#/, "")).filter(
       Boolean,
     );
     if (sectionIds.length === 0) return;
@@ -159,13 +159,10 @@ export function useNavbar() {
     hasMounted,
     copiedKey,
     setCopiedKey,
-    // refs
     dropdownRef,
     mobileBtnRef,
-    // computed
     navWidth,
     isLinkActive,
-    // actions
     handleCopy,
   };
 }

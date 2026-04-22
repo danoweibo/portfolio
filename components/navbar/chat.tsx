@@ -4,19 +4,6 @@ interface LiveChatProps {
   onBack: () => void;
 }
 
-/**
- * Placeholder view shown inside the Chat modal when the user chooses
- * "Open Live Chat".
- *
- * ── TODO ────────────────────────────────────────────────────────────────────
- * See TODO.md — this component will be replaced with a full live-chat UI
- * backed by the Telegram Bot API. The operator will receive and reply to
- * messages from Telegram; visitors chat here in the browser.
- * ────────────────────────────────────────────────────────────────────────────
- *
- * Kept in its own file so the Telegram integration work is fully isolated
- * from the rest of the navbar/modal system.
- */
 export function LiveChat({ onBack }: LiveChatProps) {
   return (
     <motion.div

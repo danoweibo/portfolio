@@ -1,8 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { createRef } from "react";
-import { NavDropdown } from "../nav-dropdown";
-import type { DropdownItem } from "../types";
+import { NavDropdown } from "@/components/navbar/dropdown";
+import type { DropdownItem } from "@/lib/types";
 
 // ── Shared fixtures ──────────────────────────────────────────────────────────
 
@@ -42,8 +42,9 @@ function defaultProps(
     isOpen: false,
     onOpen: vi.fn(),
     onClose: vi.fn(),
-    dropdownRef: createRef<HTMLDivElement>(),
-    mobileBtnRef: createRef<HTMLButtonElement>(),
+    dropdownRef: createRef<HTMLDivElement>() as React.RefObject<HTMLDivElement>,
+    mobileBtnRef:
+      createRef<HTMLButtonElement>() as React.RefObject<HTMLButtonElement>,
     variant: "desktop",
     animationDelay: 0,
     hasMounted: true,
@@ -56,9 +57,7 @@ function defaultProps(
 describe("NavDropdown — desktop variant", () => {
   it("renders the trigger button", () => {
     render(<NavDropdown {...defaultProps()} />);
-    expect(
-      screen.getByRole("button", { name: /let's connect/i }),
-    ).toBeTruthy();
+    expect(screen.getByRole("button", { name: /let's connect/i })).toBeTruthy();
   });
 
   it("does not render dropdown list when closed", () => {
@@ -115,9 +114,7 @@ describe("NavDropdown — desktop variant", () => {
 describe("NavDropdown — mobile variant", () => {
   it("renders the trigger button", () => {
     render(<NavDropdown {...defaultProps({ variant: "mobile" })} />);
-    expect(
-      screen.getByRole("button", { name: /let's connect/i }),
-    ).toBeTruthy();
+    expect(screen.getByRole("button", { name: /let's connect/i })).toBeTruthy();
   });
 
   it("calls onOpen when button clicked while closed", () => {

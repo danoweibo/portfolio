@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { CONTACT } from "@/lib/constants";
 import { Copy, Check } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   PhoneIcon,
   ChatIcon,
@@ -10,7 +8,9 @@ import {
   MeetingIcon,
   WhatsAppIcon,
 } from "@/components/icons";
-import { LiveChat } from "./live-chat";
+import { LiveChat } from "@/components/navbar/chat";
+import { motion, AnimatePresence } from "motion/react";
+import { Contact } from "@/components/navbar/constants";
 import type { ModalType, SubModalType } from "@/lib/types";
 
 interface ContactModalsProps {
@@ -22,7 +22,7 @@ interface ContactModalsProps {
 }
 
 /**
- * Renders all four contact modals (chat | phone | email | meeting) via a
+ * Renders all four Contact modals (chat | phone | email | meeting) via a
  * React portal into `document.body`.
  *
  * The chat modal internally manages the `subModal` state (default view vs.
@@ -80,14 +80,14 @@ export function ContactModals({
                   >
                     <ChatIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
                     <h3 className="mb-2 text-xl font-bold text-black">
-                      {CONTACT.chat.label}
+                      {Contact.chat.label}
                     </h3>
                     <p className="text-md mb-6 font-semibold text-gray-500">
-                      {CONTACT.chat.subtitle}
+                      {Contact.chat.subtitle}
                     </p>
-                    <div className="flex gap-3">
+                    <div className="space-y-3 md:flex md:gap-3 md:space-y-0">
                       <a
-                        href={CONTACT.chat.value}
+                        href={Contact.chat.value}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
@@ -97,7 +97,7 @@ export function ContactModals({
                       </a>
                       <button
                         onClick={() => setSubModal("liveChat")}
-                        className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
+                        className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700 md:w-fit"
                       >
                         Open Live Chat
                       </button>
@@ -112,14 +112,14 @@ export function ContactModals({
               <>
                 <PhoneIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
                 <h3 className="mb-2 text-xl font-bold text-black">
-                  {CONTACT.phone.label}
+                  {Contact.phone.label}
                 </h3>
                 <p className="text-md mb-6 font-semibold text-gray-500">
-                  {CONTACT.phone.subtitle}
+                  {Contact.phone.subtitle}
                 </p>
                 <div className="flex gap-3">
                   <button
-                    onClick={() => onCopy(CONTACT.phone.subtitle, "phone")}
+                    onClick={() => onCopy(Contact.phone.subtitle, "phone")}
                     className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
                   >
                     {copiedKey === "phone" ? (
@@ -134,7 +134,7 @@ export function ContactModals({
                     )}
                   </button>
                   <a
-                    href={CONTACT.phone.value}
+                    href={Contact.phone.value}
                     className="flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                   >
                     Call Now
@@ -148,14 +148,14 @@ export function ContactModals({
               <>
                 <EmailIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
                 <h3 className="mb-2 text-xl font-bold text-black">
-                  {CONTACT.email.label}
+                  {Contact.email.label}
                 </h3>
                 <p className="text-md mb-6 font-semibold break-all text-gray-500">
-                  {CONTACT.email.subtitle}
+                  {Contact.email.subtitle}
                 </p>
                 <div className="flex gap-3">
                   <button
-                    onClick={() => onCopy(CONTACT.email.subtitle, "email")}
+                    onClick={() => onCopy(Contact.email.subtitle, "email")}
                     className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-100 px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
                   >
                     {copiedKey === "email" ? (
@@ -170,7 +170,7 @@ export function ContactModals({
                     )}
                   </button>
                   <a
-                    href={CONTACT.email.value}
+                    href={Contact.email.value}
                     className="flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
                   >
                     Mail Now
@@ -184,13 +184,13 @@ export function ContactModals({
               <>
                 <MeetingIcon className="mx-auto mb-4 h-12 w-12 text-stone-700" />
                 <h3 className="mb-2 text-xl font-bold text-black">
-                  {CONTACT.meeting.label}
+                  {Contact.meeting.label}
                 </h3>
                 <p className="mb-6 text-sm font-semibold break-all text-gray-500">
-                  {CONTACT.meeting.value}
+                  {Contact.meeting.value}
                 </p>
                 <a
-                  href={CONTACT.meeting.value}
+                  href={Contact.meeting.value}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-stone-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-stone-700"
