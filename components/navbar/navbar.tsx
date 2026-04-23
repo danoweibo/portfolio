@@ -7,9 +7,9 @@ import {
   ChatIcon,
   MeetingIcon,
   EmailIcon,
-  PortfolioIcon,
 } from "@/components/icons";
 import { cn } from "@/lib/utils";
+import PortfolioLogo from "../branding/premium";
 import { MobileMenu } from "@/components/navbar/menu";
 import { motion, AnimatePresence } from "motion/react";
 import { NavDropdown } from "@/components/navbar/dropdown";
@@ -18,7 +18,6 @@ import { useNavbar } from "@/components/navbar/hooks/navbar";
 import { SquigglyUnderline } from "@/components/navbar/squiggly";
 import { Contact, Links, Site } from "@/components/navbar/constants";
 import type { ModalType } from "@/lib/types";
-import MetallicPaint from "@/components/ui/metallic-paint";
 
 /**
  * Top-level Navbar component.
@@ -114,41 +113,7 @@ export function Navbar() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="shrink-0"
         >
-          <Image
-            src={Site.logo}
-            alt={Site.name}
-            width={48}
-            height={48}
-            className="hidden h-12 w-12"
-          />
-          <div className="h-12 w-12">
-            <MetallicPaint
-              imageSrc="/images/cutout.svg"
-              // Pattern
-              seed={42}
-              scale={2}
-              patternSharpness={1}
-              noiseScale={0.5}
-              // Animation
-              speed={0.2}
-              liquid={0.75}
-              mouseAnimation={false}
-              // Visual
-              brightness={2}
-              contrast={0.5}
-              refraction={0.01}
-              blur={0.015}
-              chromaticSpread={2}
-              fresnel={1}
-              angle={0}
-              waveAmplitude={1}
-              distortion={1}
-              contour={0.2}
-              lightColor="#5c5d5e"
-              darkColor="#000000"
-              tintColor="#feb3ff"
-            />
-          </div>
+          <PortfolioLogo size={48} className="h-12 w-12" />
         </motion.a>
 
         {/* ── Desktop nav links + dropdown ──────────────────────────────── */}
