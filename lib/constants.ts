@@ -3,65 +3,17 @@ export const SITE = {
   name: "Daniel Oweibo",
 };
 
-export const CAREERS = [
-  {
-    id: "company-a",
-    role: "Senior Fullstack Engineer",
-    company: "Acme Corp",
-    banner: "/images/spacetrade.webp",
-    contributions: [
-      "Architected a multi-tenant SaaS platform serving 50k+ users",
-      "Reduced API response time by 40% through query optimisation",
-      "Led a team of 5 engineers across frontend and backend squads",
-      "Introduced CI/CD pipelines cutting deployment time from 2hr to 8min",
-    ],
-    images: [
-      "/images/spacetrade-1.jpg",
-      "/images/spacetrade-2.png",
-      "/images/spacetrade-3.png",
-    ],
-  },
-  {
-    id: "company-b",
-    role: "Backend Engineer",
-    company: "Bravo Systems",
-    banner: "/images/aiico.webp",
-    contributions: [
-      "Built a real-time data pipeline processing 1M+ events per day",
-      "Designed microservices architecture using Golang and gRPC",
-      "Improved system uptime from 97% to 99.9% SLA",
-    ],
-    images: [],
-  },
-  {
-    id: "company-c",
-    role: "Frontend Engineer",
-    company: "Charlie Studio",
-    banner: "https://placehold.co/1200x400/16213e/ffffff?text=Charlie+Studio",
-    contributions: [
-      "Delivered pixel-perfect UI components used across 3 product lines",
-      "Built a design system from scratch adopted by 8 engineers",
-      "Improved Lighthouse performance score from 62 to 97",
-      "Integrated complex data visualisations using D3.js",
-    ],
-    images: [
-      "https://placehold.co/800x500/e8e4dc/888888?text=Design+System",
-      "https://placehold.co/800x500/e8e4dc/888888?text=Component+Library",
-    ],
-  },
-];
-
 export const PRODUCTS = [
   {
-    id: "product-a",
-    icon: "https://placehold.co/64x64/1a1a2e/ffffff?text=A",
-    name: "AppName One",
+    id: "bullioner",
+    icon: "/images/products/bullioner.png",
+    name: "Bullioner",
     description:
-      "A brief description of what this product does and who it serves. Used by customers daily.",
+      "Cryptocurrency fintech project focused on solving issues with staking and earning yield for digital asset growth alongside standard transaction-based features including credits and debits, bill payments and statement history. ",
     solves: [
-      "Eliminates manual reporting workflows",
-      "Centralises team communication",
-      "Automates invoice generation",
+      "Offers competitive staking options for digital asset growth",
+      "Provides user-friendly platform for managing cryptocurrency portfolios",
+      "Integrates traditional financial features for seamless transactions",
     ],
     images: [
       "https://placehold.co/390x844/e8e4dc/888888?text=Screen+1",
@@ -70,15 +22,15 @@ export const PRODUCTS = [
     ],
   },
   {
-    id: "product-b",
-    icon: "https://placehold.co/64x64/0f3460/ffffff?text=B",
-    name: "AppName Two",
+    id: "firmament",
+    icon: "/images/firmament.png",
+    name: "Firmament ERP",
     description:
-      "Another product that solves a real problem at scale. Trusted by thousands of businesses.",
+      "Developed for businesses and enterprises aimed to solve operational and fragmentation issues with resource planning modules by improving the documentation and integration utilities through artificially intelligent systems. ",
     solves: [
-      "Real-time inventory tracking",
-      "Multi-currency payment processing",
-      "One-click supplier ordering",
+      "Streamlines resource management",
+      "Enhances data-driven decision making",
+      "Improves cross-departmental collaboration",
     ],
     images: [
       "https://placehold.co/390x844/e8e4dc/888888?text=Screen+1",
@@ -87,15 +39,15 @@ export const PRODUCTS = [
     ],
   },
   {
-    id: "product-c",
+    id: "jotclip",
     icon: "https://placehold.co/64x64/16213e/ffffff?text=C",
-    name: "AppName Three",
+    name: "Jotclip",
     description:
-      "A platform engineering tool that makes infrastructure accessible to every developer.",
+      "Boosts productivity in video annotations by transforming manual review tasks into automated reviews executed by artificial intelligence which learns customers’ preferences, by noting the changes made to the ones generated. ",
     solves: [
-      "One-click environment provisioning",
-      "Visualises infrastructure as code",
-      "Detects drift in real time",
+      "Simplifies video review processes",
+      "Allows for more efficient collaboration with teams",
+      "Reduces time spent on manual annotations",
     ],
     images: [
       "https://placehold.co/390x844/e8e4dc/888888?text=Screen+1",

@@ -15,3 +15,34 @@ export interface DropdownItem {
   subtitle: string;
   action: () => void;
 }
+
+export interface PortfolioHero {
+  greeting: string;
+  tagline: string;
+  description: string;
+  image: string;
+}
+
+export interface PortfolioCareer {
+  id: string;
+  role: string;
+  company: string;
+  duration: string;
+  banner: string;
+  contributions: string[];
+  stacks: { name: string; icon: string }[];
+  images: string[];
+}
+
+export interface PortfolioProducts {
+  id: string;
+  icon: string;
+  name: string;
+  description: string;
+  solves: string[];
+  stacks: {
+    name: string;
+    icon: string;
+  }[];
+  images: string[];
+}
