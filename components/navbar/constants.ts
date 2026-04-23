@@ -17,7 +17,7 @@ export const Contact = {
   meeting: {
     label: "Book a meeting",
     subtitle: "Schedule on Calendly",
-    value: "Daniel Oweibo on Calendly",
+    value: "https://calendly.com/danoweibo/30min",
   },
 };
 
@@ -28,6 +28,6 @@ export const Links = [
 ];
 
 export const Site = {
-  logo: "/images/logo.png",
+  logo: "/images/logo-dark.png",
   name: "Daniel Oweibo",
 };

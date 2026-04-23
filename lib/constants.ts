@@ -1,5 +1,5 @@
 export const SITE = {
-  logo: "/images/logo.png",
+  logo: "/images/logo-dark.png",
   name: "Daniel Oweibo",
 };
 

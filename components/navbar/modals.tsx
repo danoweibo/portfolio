@@ -187,7 +187,7 @@ export function ContactModals({
                   {Contact.meeting.label}
                 </h3>
                 <p className="mb-6 text-sm font-semibold break-all text-gray-500">
-                  {Contact.meeting.value}
+                  {Contact.meeting.subtitle}
                 </p>
                 <a
                   href={Contact.meeting.value}
