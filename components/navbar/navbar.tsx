@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import {
   PhoneIcon,
@@ -9,8 +8,8 @@ import {
   EmailIcon,
 } from "@/components/icons";
 import { cn } from "@/lib/utils";
-import PortfolioLogo from "../branding/premium";
 import { MobileMenu } from "@/components/navbar/menu";
+import PortfolioLogo from "@/components/branding/logo";
 import { motion, AnimatePresence } from "motion/react";
 import { NavDropdown } from "@/components/navbar/dropdown";
 import { ContactModals } from "@/components/navbar/modals";

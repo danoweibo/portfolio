@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import Image from "next/image";
 import MetallicPaint from "@/components/ui/metallic-paint";
 import { Site } from "@/components/navbar/constants";
@@ -12,10 +12,9 @@ export default function PortfolioLogo({
   className?: string;
   size?: number;
 }) {
-  const [isAndroid, setIsAndroid] = useState(false);
-
-  useEffect(() => {
-    setIsAndroid(/android/i.test(navigator.userAgent));
+  const isAndroid = useMemo(() => {
+    if (typeof window === "undefined") return false;
+    return /android/i.test(navigator.userAgent);
   }, []);
 
   if (isAndroid) {
