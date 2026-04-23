@@ -69,7 +69,7 @@ const eslintConfig = defineConfig([
             caseInsensitive: true,
           },
 
-          "newlines-between": "always",
+          "newlines-between": "never",
         },
       ],
     },

@@ -1,7 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
-
 import { Navbar } from "@/components/navbar";
-
 import {
   bushmanFont,
   dmFont,
@@ -12,9 +10,7 @@ import {
   tiktokFont,
   playfairFont,
 } from "@/lib/fonts";
-
 import { LenisProvider } from "@/providers/lenis";
-
 import type { Metadata } from "next";
 import "./globals.css";
 

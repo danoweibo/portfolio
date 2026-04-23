@@ -1,14 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-
 import { motion, useScroll, useTransform, useInView } from "motion/react";
-
 import Image from "next/image";
-
-import { HERO } from "@/lib/constants";
-
-import LetterGlitch from "./ui/letter-glitch";
+import { HERO } from "@/components/hero/constants";
+import LetterGlitch from "@/components/ui/letter-glitch";
 
 function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {
   const words = text.split(" ");

@@ -1,8 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
-
 import { Links } from "@/components/navbar/constants";
 import { SquigglyUnderline } from "@/components/navbar/squiggly";
-
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {

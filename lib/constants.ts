@@ -3,21 +3,12 @@ export const SITE = {
   name: "Daniel Oweibo",
 };
 
-export const HERO = {
-  greeting: "Hey, I'm Daniel.",
-  tagline:
-    "Fullstack developer obsessed with building platforms and scaling infrastructure!",
-  description:
-    "I build platforms, design user interfaces, engineer server architectures and everything in-between.",
-  image: "/images/posture.png",
-};
-
 export const CAREERS = [
   {
     id: "company-a",
     role: "Senior Fullstack Engineer",
     company: "Acme Corp",
-    banner: "https://placehold.co/1200x400/1a1a2e/ffffff?text=Acme+Corp",
+    banner: "/images/spacetrade.webp",
     contributions: [
       "Architected a multi-tenant SaaS platform serving 50k+ users",
       "Reduced API response time by 40% through query optimisation",
@@ -25,16 +16,16 @@ export const CAREERS = [
       "Introduced CI/CD pipelines cutting deployment time from 2hr to 8min",
     ],
     images: [
-      "https://placehold.co/800x500/e8e4dc/888888?text=Dashboard+View",
-      "https://placehold.co/800x500/e8e4dc/888888?text=Analytics+Screen",
-      "https://placehold.co/800x500/e8e4dc/888888?text=Mobile+App",
+      "/images/spacetrade-1.jpg",
+      "/images/spacetrade-2.png",
+      "/images/spacetrade-3.png",
     ],
   },
   {
     id: "company-b",
     role: "Backend Engineer",
     company: "Bravo Systems",
-    banner: "https://placehold.co/1200x400/0f3460/ffffff?text=Bravo+Systems",
+    banner: "/images/aiico.webp",
     contributions: [
       "Built a real-time data pipeline processing 1M+ events per day",
       "Designed microservices architecture using Golang and gRPC",
@@ -66,7 +57,7 @@ export const PRODUCTS = [
     icon: "https://placehold.co/64x64/1a1a2e/ffffff?text=A",
     name: "AppName One",
     description:
-      "A brief description of what this product does and who it serves. Used by thousands daily.",
+      "A brief description of what this product does and who it serves. Used by customers daily.",
     solves: [
       "Eliminates manual reporting workflows",
       "Centralises team communication",

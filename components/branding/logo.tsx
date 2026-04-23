@@ -1,9 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-
 import Image from "next/image";
-
 import { Site } from "@/components/navbar/constants";
 import MetallicPaint from "@/components/ui/metallic-paint";
 

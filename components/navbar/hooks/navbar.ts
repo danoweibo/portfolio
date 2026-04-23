@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from "react";
-
 import { Links } from "@/components/navbar/constants";
 
 export function useNavbar() {

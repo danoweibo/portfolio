@@ -1,9 +1,6 @@
 import { RefObject } from "react";
-
 import { motion, AnimatePresence } from "motion/react";
-
 import { PartnerIcon } from "@/components/icons";
-
 import type { DropdownItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
 

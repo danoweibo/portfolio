@@ -1,13 +1,9 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-
 import { motion, useAnimation } from "motion/react"
-
 import Image from "next/image"
-
 import { SKILLS } from "@/lib/constants"
-
 import { AnimatedHeading } from "./animated-heading"
 
 

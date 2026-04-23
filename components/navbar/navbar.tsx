@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
 import { motion, AnimatePresence } from "motion/react";
-
 import PortfolioLogo from "@/components/branding/logo";
 import {
   PhoneIcon,
@@ -17,7 +15,6 @@ import { useNavbar } from "@/components/navbar/hooks/navbar";
 import { MobileMenu } from "@/components/navbar/menu";
 import { ContactModals } from "@/components/navbar/modals";
 import { SquigglyUnderline } from "@/components/navbar/squiggly";
-
 import type { ModalType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 

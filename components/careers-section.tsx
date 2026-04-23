@@ -1,33 +1,29 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-
-import { motion, useScroll, useTransform, useInView } from "motion/react"
-
-import Image from "next/image"
-
-import { CAREERS } from "@/lib/constants"
-
-import { AnimatedHeading } from "./animated-heading"
-import { ScrolljackCarousel } from "./scrolljack-carousel"
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "motion/react";
+import Image from "next/image";
+import { CAREERS } from "@/lib/constants";
+import { AnimatedHeading } from "./animated-heading";
+import { ScrolljackCarousel } from "./scrolljack-carousel";
 
 interface CareerEntryProps {
-  career: (typeof CAREERS)[0]
+  career: (typeof CAREERS)[0];
 }
 
 function CareerEntry({ career }: CareerEntryProps) {
-  const bannerRef = useRef(null)
+  const bannerRef = useRef(null);
   const { scrollYProgress: bannerProgress } = useScroll({
     target: bannerRef,
     offset: ["start end", "center center"],
-  })
-  const bannerScale = useTransform(bannerProgress, [0, 1], [0.85, 1])
+  });
+  const bannerScale = useTransform(bannerProgress, [0, 1], [0.85, 1]);
 
-  const listRef = useRef(null)
+  const listRef = useRef(null);
   const listInView = useInView(listRef, {
     once: false,
     margin: "-10% 0px -10% 0px",
-  })
+  });
 
   return (
     <div className="mb-24 last:mb-0">
@@ -35,7 +31,7 @@ function CareerEntry({ career }: CareerEntryProps) {
       <motion.div
         ref={bannerRef}
         style={{ scale: bannerScale }}
-        className="overflow-hidden rounded-2xl w-full"
+        className="w-full overflow-hidden rounded-2xl"
       >
         <Image
           src={career.banner}
@@ -50,10 +46,10 @@ function CareerEntry({ career }: CareerEntryProps) {
       </motion.div>
 
       {/* Role + Company + @ icon row */}
-      <div className="flex items-center justify-between mt-6">
+      <div className="mt-6 flex items-center justify-between">
         <div>
           <h3 className="text-2xl font-bold text-gray-900">{career.role}</h3>
-          <p className="text-lg text-gray-500 mt-1">{career.company}</p>
+          <p className="mt-1 text-lg text-gray-500">{career.company}</p>
         </div>
         <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
           <text
@@ -81,9 +77,9 @@ function CareerEntry({ career }: CareerEntryProps) {
             initial={{ opacity: 0, y: 16 }}
             animate={listInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-            className="flex items-start gap-3 text-gray-600 text-sm"
+            className="flex items-start gap-3 text-sm text-gray-600"
           >
-            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
             {item}
           </motion.li>
         ))}
@@ -96,13 +92,13 @@ function CareerEntry({ career }: CareerEntryProps) {
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export function CareersSection() {
   return (
-    <section id="career" className="bg-[#fafafa] py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="career" className="bg-[#fafafa] px-6 py-24">
+      <div className="mx-auto max-w-5xl">
         <AnimatedHeading text="Career" />
         <div className="mt-16">
           {CAREERS.map((career) => (
@@ -111,5 +107,5 @@ export function CareersSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

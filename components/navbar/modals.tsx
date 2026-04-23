@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 import { Copy, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
-
 import {
   PhoneIcon,
   ChatIcon,
@@ -13,7 +11,6 @@ import {
 } from "@/components/icons";
 import { LiveChat } from "@/components/navbar/chat";
 import { Contact } from "@/components/navbar/constants";
-
 import type { ModalType, SubModalType } from "@/lib/types";
 
 interface ContactModalsProps {
