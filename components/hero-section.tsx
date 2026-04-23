@@ -8,6 +8,8 @@ import Image from "next/image";
 
 import { HERO } from "@/lib/constants";
 
+import LetterGlitch from "./ui/letter-glitch";
+
 function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {
   const words = text.split(" ");
   const ref = useRef(null);
@@ -34,6 +36,45 @@ function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {
   );
 }
 
+function AnimatedTagline({
+  text,
+  delay = 0,
+}: {
+  text: string;
+  delay?: number;
+}) {
+  const words = text.split(" ");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-10% 0px -10% 0px" });
+
+  // "Fullstack developer" = first 2 words
+  const boldCount = 2;
+
+  return (
+    <p ref={ref}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 8 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+          transition={{
+            duration: 0.3,
+            delay: delay + i * 0.04,
+            ease: "easeOut",
+          }}
+          style={{
+            display: "inline-block",
+            marginRight: "0.25em",
+            fontWeight: i < boldCount ? 700 : 400,
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </p>
+  );
+}
+
 export function HeroSection() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.4], [0, -60]);
@@ -51,10 +92,22 @@ export function HeroSection() {
   });
 
   return (
-    <section className="min-h-screen bg-[#f5f0e8] relative overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-[#f5f0e8]">
+      {/* LetterGlitch as full-section background */}
+      <div className="absolute inset-0 z-0">
+        <LetterGlitch
+          glitchColors={["#e9e4dd", "#d5d1ca"]}
+          glitchSpeed={50}
+          outerVignette={false}
+          characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789"
+          smooth
+        />
+      </div>
+
+      {/* Content sits above the glitch */}
       <motion.div
         style={{ y }}
-        className="container mx-auto px-6 pt-32 pb-24 lg:pt-40 lg:pb-32"
+        className="relative z-10 container mx-auto px-6 pt-32 pb-24 lg:pt-40 lg:pb-32"
       >
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
           {/* Left column — Image (desktop only) */}
@@ -70,7 +123,7 @@ export function HeroSection() {
               alt="Daniel Oweibo"
               width={480}
               height={560}
-              className="rounded-2xl object-cover w-full h-auto"
+              className="h-auto w-full rounded-2xl object-cover"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
               priority
@@ -78,23 +131,23 @@ export function HeroSection() {
           </motion.div>
 
           {/* Right column — Text */}
-          <div ref={textRef} className="lg:w-1/2 flex flex-col justify-center">
+          <div ref={textRef} className="flex flex-col justify-center lg:w-1/2">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={
                 textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
+              className="mb-6 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl"
             >
               {HERO.greeting}
             </motion.h1>
 
-            <div className="text-xl lg:text-2xl font-medium text-gray-700 mb-4">
-              <AnimatedText text={HERO.tagline} delay={0.1} />
+            <div className="mb-4 text-xl font-medium text-gray-700 lg:text-2xl">
+              <AnimatedTagline text={HERO.tagline} delay={0.1} />
             </div>
 
-            <div className="text-lg text-gray-500 leading-relaxed">
+            <div className="text-lg leading-relaxed text-gray-500">
               <AnimatedText text={HERO.description} delay={0.3} />
             </div>
           </div>

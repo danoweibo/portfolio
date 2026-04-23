@@ -4,12 +4,12 @@ export const SITE = {
 };
 
 export const HERO = {
-  greeting: "Hey, I'm Daniel",
+  greeting: "Hey, I'm Daniel.",
   tagline:
-    "fullstack developer obsessed with building platforms and scaling infrastructure",
+    "Fullstack developer obsessed with building platforms and scaling infrastructure!",
   description:
     "I build platforms, design user interfaces, engineer server architectures and everything in-between.",
-  image: "https://placehold.co/480x560/e8e4dc/888888?text=Daniel",
+  image: "/images/posture.png",
 };
 
 export const CAREERS = [
