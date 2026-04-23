@@ -1,7 +1,12 @@
+export { XIcon } from "@/components/icons/x";
 export { ChatIcon } from "@/components/icons/chat";
 export { EmailIcon } from "@/components/icons/email";
 export { PhoneIcon } from "@/components/icons/phone";
 export { PartnerIcon } from "@/components/icons/partner";
 export { MeetingIcon } from "@/components/icons/meeting";
+export { YouTubeIcon } from "@/components/icons/youtube";
+export { DiscordIcon } from "@/components/icons/discord";
 export { WhatsAppIcon } from "@/components/icons/whatsapp";
 export { PortfolioIcon } from "@/components/icons/portfolio";
+export { LinkedInIcon } from "@/components/icons/linkedin";
+export { GithubIcon } from "@/components/icons/github";

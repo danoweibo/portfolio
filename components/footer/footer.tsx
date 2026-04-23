@@ -1,17 +1,25 @@
 "use client";
 
 import { useRef } from "react";
-import { MessageCircle, Bird, Cat, Play, House } from "lucide-react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import Image from "next/image";
-import { SITE, FOOTER } from "@/lib/constants";
+import { FOOTER } from "@/components/footer/constants";
+import {
+  PortfolioIcon,
+  DiscordIcon,
+  GithubIcon,
+  LinkedInIcon,
+  XIcon,
+  YouTubeIcon,
+} from "@/components/icons";
+import { Site } from "@/lib/constants";
 
 const platformIcons: Record<string, React.ElementType> = {
-  X: Bird,
-  LinkedIn: House,
-  GitHub: Cat,
-  Discord: MessageCircle,
-  YouTube: Play,
+  X: XIcon,
+  LinkedIn: LinkedInIcon,
+  GitHub: GithubIcon,
+  Discord: DiscordIcon,
+  YouTube: YouTubeIcon,
 };
 
 export function FooterSection() {
@@ -29,9 +37,9 @@ export function FooterSection() {
     <motion.footer
       ref={footerRef}
       style={{ y }}
-      className="bg-[#fafafa] border-t border-gray-200 py-16 px-6"
+      className="border-t border-gray-200 bg-[#fafafa] px-6 py-16"
     >
-      <div ref={contentRef} className="max-w-5xl mx-auto">
+      <div ref={contentRef} className="mx-auto max-w-5xl">
         {/* Desktop layout */}
         <div className="hidden lg:flex lg:items-start lg:justify-between">
           {/* Left: Logo + Tagline */}
@@ -45,17 +53,17 @@ export function FooterSection() {
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
-                src={SITE.logo}
-                alt={SITE.name}
-                width={48}
-                height={48}
-                className="w-12 h-12"
+                src={Site.logo}
+                alt={Site.name}
+                width={80}
+                height={80}
+                className="h-20 w-20"
               />
             </motion.div>
             <motion.p
               animate={contentInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-gray-900 font-medium text-lg mt-3"
+              className="font-passion mt-3 text-3xl font-medium text-gray-900"
             >
               {FOOTER.tagline}
             </motion.p>
@@ -64,7 +72,7 @@ export function FooterSection() {
           {/* Right: Social icons */}
           <div className="flex items-center gap-6">
             {FOOTER.socials.map((s) => {
-              const Icon = platformIcons[s.platform] || Bird;
+              const Icon = platformIcons[s.platform] || PortfolioIcon;
               return (
                 <motion.a
                   key={s.platform}
@@ -76,7 +84,7 @@ export function FooterSection() {
                   transition={{ duration: 0.15 }}
                   className="text-gray-400 transition-colors"
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="h-5 w-5" />
                 </motion.a>
               );
             })}
@@ -84,12 +92,12 @@ export function FooterSection() {
         </div>
 
         {/* Desktop copyright */}
-        <p className="hidden lg:block text-gray-400 text-xs mt-8 text-right">
+        <p className="mt-8 hidden text-right text-xs text-gray-400 lg:block">
           {FOOTER.copyright}
         </p>
 
         {/* Mobile layout */}
-        <div className="flex lg:hidden flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center lg:hidden">
           <motion.div
             animate={
               contentInView
@@ -99,35 +107,35 @@ export function FooterSection() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <Image
-              src={SITE.logo}
-              alt={SITE.name}
-              width={48}
-              height={48}
-              className="w-12 h-12"
+              src={Site.logo}
+              alt={Site.name}
+              width={80}
+              height={80}
+              className="h-20 w-20"
             />
           </motion.div>
 
           <motion.p
             animate={contentInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-gray-900 font-medium text-lg mt-3"
+            className="font-passion mt-3 text-2xl font-medium text-gray-900"
           >
             {FOOTER.tagline}
           </motion.p>
 
           {/* Mobile socials with handle */}
-          <div className="flex flex-col items-center gap-4 mt-8">
+          <div className="mt-8 flex flex-col items-center gap-4">
             {FOOTER.socials.map((s) => {
-              const Icon = platformIcons[s.platform] || Bird;
+              const Icon = platformIcons[s.platform] || PortfolioIcon;
               return (
                 <a
                   key={s.platform}
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-600 text-sm"
+                  className="flex items-center gap-3 text-sm text-gray-600"
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="h-5 w-5" />
                   <span>{s.handle}</span>
                 </a>
               );
@@ -135,7 +143,7 @@ export function FooterSection() {
           </div>
 
           {/* Mobile copyright */}
-          <p className="text-gray-400 text-xs mt-8">{FOOTER.copyright}</p>
+          <p className="mt-8 text-xs text-gray-400">{FOOTER.copyright}</p>
         </div>
       </div>
     </motion.footer>

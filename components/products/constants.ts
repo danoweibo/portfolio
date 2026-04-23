@@ -14,7 +14,6 @@ export const PRODUCTS: PortfolioProducts[] = [
     ],
     stacks: [
       { name: "Next.js", icon: "nextdotjs" },
-      { name: "React Native", icon: "reactnative" },
       { name: "Expo", icon: "expo" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Node.js", icon: "nodedotjs" },
@@ -43,7 +42,6 @@ export const PRODUCTS: PortfolioProducts[] = [
       { name: "Nuxt", icon: "nuxt" },
       { name: "Vue.js", icon: "vuedotjs" },
       { name: "Expo", icon: "expo" },
-      { name: "React Native", icon: "reactnative" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Java", icon: "java" },
       { name: "Spring Boot", icon: "springboot" },
@@ -69,7 +67,6 @@ export const PRODUCTS: PortfolioProducts[] = [
     ],
     stacks: [
       { name: "Next.js", icon: "nextdotjs" },
-      { name: "React Native", icon: "reactnative" },
       { name: "Expo", icon: "expo" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Python", icon: "python" },

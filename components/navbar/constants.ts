@@ -26,8 +26,3 @@ export const Links = [
   { label: "Products", href: "#products" },
   { label: "Skills", href: "#skills" },
 ];
-
-export const Site = {
-  logo: "/images/logo-dark.png",
-  name: "Daniel Oweibo",
-};

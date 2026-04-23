@@ -100,7 +100,7 @@ function CareerEntry({ career }: CareerEntryProps) {
               title={stack.name}
             >
               <Image
-                src={`https://cdn.simpleicons.org/${stack.icon}`}
+                src={`/images/simpleicons/${stack.icon}.svg`}
                 alt={stack.name}
                 width={14}
                 height={14}

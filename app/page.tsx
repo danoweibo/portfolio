@@ -1,5 +1,5 @@
 import { CareersSection } from "@/components/careers";
-import { FooterSection } from "@/components/footer-section";
+import { FooterSection } from "@/components/footer";
 import { HeroSection } from "@/components/hero";
 import { ProductsSection } from "@/components/products";
 import { SkillsSection } from "@/components/skills";

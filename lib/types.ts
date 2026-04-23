@@ -51,3 +51,13 @@ export interface PortfolioSkills {
   label: string;
   icon: string;
 }
+
+export interface PortfolioFooter {
+  tagline: string;
+  socials: {
+    platform: string;
+    handle: string;
+    url: string;
+  }[];
+  copyright: string;
+}

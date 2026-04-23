@@ -9,12 +9,13 @@ import {
   MeetingIcon,
   EmailIcon,
 } from "@/components/icons";
-import { Contact, Links, Site } from "@/components/navbar/constants";
+import { Contact, Links } from "@/components/navbar/constants";
 import { NavDropdown } from "@/components/navbar/dropdown";
 import { useNavbar } from "@/components/navbar/hooks/navbar";
 import { MobileMenu } from "@/components/navbar/menu";
 import { ContactModals } from "@/components/navbar/modals";
 import { SquigglyUnderline } from "@/components/navbar/squiggly";
+import { Site } from "@/lib/constants";
 import type { ModalType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 

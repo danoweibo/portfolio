@@ -15,7 +15,6 @@ export const CAREERS: PortfolioCareer[] = [
     ],
     stacks: [
       { name: "Expo", icon: "expo" },
-      { name: "React Native", icon: "reactnative" },
       { name: "Next.js", icon: "nextdotjs" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Node.js", icon: "nodedotjs" },
@@ -62,7 +61,6 @@ export const CAREERS: PortfolioCareer[] = [
     ],
     stacks: [
       { name: "Next.js", icon: "nextdotjs" },
-      { name: "React Native", icon: "reactnative" },
       { name: "Expo", icon: "expo" },
       { name: "TypeScript", icon: "typescript" },
       { name: "Prisma", icon: "prisma" },
