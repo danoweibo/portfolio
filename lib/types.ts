@@ -46,3 +46,8 @@ export interface PortfolioProducts {
   }[];
   images: string[];
 }
+
+export interface PortfolioSkills {
+  label: string;
+  icon: string;
+}

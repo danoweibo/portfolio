@@ -140,7 +140,7 @@ export function ProductsSection() {
               <ProductInfo product={product} />
             </div>
             <div className="w-1/2">
-              <ScrolljackCarousel images={product.images} height="760px" />
+              <ScrolljackCarousel images={product.images} height="600px" />
             </div>
           </div>
 
