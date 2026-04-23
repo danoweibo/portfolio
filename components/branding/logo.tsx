@@ -1,9 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
+
 import Image from "next/image";
-import MetallicPaint from "@/components/ui/metallic-paint";
+
 import { Site } from "@/components/navbar/constants";
+import MetallicPaint from "@/components/ui/metallic-paint";
 
 export default function PortfolioLogo({
   className,

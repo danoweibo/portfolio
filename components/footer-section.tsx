@@ -1,9 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "motion/react";
-import Image from "next/image";
+
 import { MessageCircle, Bird, Cat, Play, House } from "lucide-react";
+import { motion, useScroll, useTransform, useInView } from "motion/react";
+
+import Image from "next/image";
+
 import { SITE, FOOTER } from "@/lib/constants";
 
 const platformIcons: Record<string, React.ElementType> = {

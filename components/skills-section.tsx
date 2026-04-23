@@ -1,10 +1,15 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+
 import { motion, useAnimation } from "motion/react"
-import { AnimatedHeading } from "./animated-heading"
+
+import Image from "next/image"
+
 import { SKILLS } from "@/lib/constants"
+
+import { AnimatedHeading } from "./animated-heading"
+
 
 export function SkillsSection() {
   const items = [...SKILLS, ...SKILLS]

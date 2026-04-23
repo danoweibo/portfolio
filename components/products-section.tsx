@@ -1,11 +1,15 @@
 "use client"
 
 import { useRef } from "react"
+
 import { motion, useInView } from "motion/react"
+
 import Image from "next/image"
+
+import { PRODUCTS } from "@/lib/constants"
+
 import { AnimatedHeading } from "./animated-heading"
 import { ScrolljackCarousel } from "./scrolljack-carousel"
-import { PRODUCTS } from "@/lib/constants"
 
 interface ProductInfoProps {
   product: (typeof PRODUCTS)[0]

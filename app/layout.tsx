@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
-import { Navbar } from "@/components/navbar";
-import { LenisProvider } from "@/providers/lenis";
 import { Analytics } from "@vercel/analytics/next";
+
+import { Navbar } from "@/components/navbar";
+
 import {
   bushmanFont,
   dmFont,
@@ -12,6 +12,10 @@ import {
   tiktokFont,
   playfairFont,
 } from "@/lib/fonts";
+
+import { LenisProvider } from "@/providers/lenis";
+
+import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {

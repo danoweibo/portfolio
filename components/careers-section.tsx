@@ -1,11 +1,15 @@
 "use client"
 
 import { useRef } from "react"
+
 import { motion, useScroll, useTransform, useInView } from "motion/react"
+
 import Image from "next/image"
+
+import { CAREERS } from "@/lib/constants"
+
 import { AnimatedHeading } from "./animated-heading"
 import { ScrolljackCarousel } from "./scrolljack-carousel"
-import { CAREERS } from "@/lib/constants"
 
 interface CareerEntryProps {
   career: (typeof CAREERS)[0]

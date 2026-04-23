@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+
 import { motion, useInView } from "motion/react"
 
 export function AnimatedHeading({ text }: { text: string }) {

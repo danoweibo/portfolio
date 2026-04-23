@@ -1,8 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+
 import { motion, useScroll, useTransform, useInView } from "motion/react";
+
 import Image from "next/image";
+
 import { HERO } from "@/lib/constants";
 
 function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {

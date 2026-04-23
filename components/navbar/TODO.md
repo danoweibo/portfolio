@@ -8,7 +8,7 @@ I will be working on the live chat interface later by connecting it to a Telegra
 
 ## File to edit
 
-**`live-chat-placeholder.tsx`** is the only file that needs to change.
+**`chat.tsx`** is the only file that needs to change.
 Everything else in the navbar system (modals, dropdown, mobile menu) remains untouched.
 
 ---
@@ -25,7 +25,7 @@ Everything else in the navbar system (modals, dropdown, mobile menu) remains unt
      - Forwards them to the Telegram Bot API (`sendMessage` to your chat ID)
      - Receives your replies via a Telegram webhook and pushes them back to the browser
 
-3. **`live-chat-placeholder.tsx` → `live-chat-widget.tsx`**
+3. **`chat.tsx`**
    - Replace the centred placeholder with a real chat UI:
      - Message thread display (visitor messages + operator replies)
      - Text input + send button

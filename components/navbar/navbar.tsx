@@ -1,22 +1,25 @@
 "use client";
 
 import { useState } from "react";
+
+import { motion, AnimatePresence } from "motion/react";
+
+import PortfolioLogo from "@/components/branding/logo";
 import {
   PhoneIcon,
   ChatIcon,
   MeetingIcon,
   EmailIcon,
 } from "@/components/icons";
-import { cn } from "@/lib/utils";
-import { MobileMenu } from "@/components/navbar/menu";
-import PortfolioLogo from "@/components/branding/logo";
-import { motion, AnimatePresence } from "motion/react";
-import { NavDropdown } from "@/components/navbar/dropdown";
-import { ContactModals } from "@/components/navbar/modals";
-import { useNavbar } from "@/components/navbar/hooks/navbar";
-import { SquigglyUnderline } from "@/components/navbar/squiggly";
 import { Contact, Links, Site } from "@/components/navbar/constants";
+import { NavDropdown } from "@/components/navbar/dropdown";
+import { useNavbar } from "@/components/navbar/hooks/navbar";
+import { MobileMenu } from "@/components/navbar/menu";
+import { ContactModals } from "@/components/navbar/modals";
+import { SquigglyUnderline } from "@/components/navbar/squiggly";
+
 import type { ModalType } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 /**
  * Top-level Navbar component.

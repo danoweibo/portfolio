@@ -1,7 +1,8 @@
 "use client"
 
-import Lenis from "lenis"
 import { useEffect } from "react"
+
+import Lenis from "lenis"
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {

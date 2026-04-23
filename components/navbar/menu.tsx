@@ -1,7 +1,9 @@
-import { cn } from "@/lib/utils";
-import { Links } from "@/components/navbar/constants";
 import { motion, AnimatePresence } from "motion/react";
+
+import { Links } from "@/components/navbar/constants";
 import { SquigglyUnderline } from "@/components/navbar/squiggly";
+
+import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;

@@ -1,8 +1,11 @@
-import { cn } from "@/lib/utils";
 import { RefObject } from "react";
-import { PartnerIcon } from "@/components/icons";
+
 import { motion, AnimatePresence } from "motion/react";
+
+import { PartnerIcon } from "@/components/icons";
+
 import type { DropdownItem } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 interface NavDropdownProps {
   /** Items to render inside the dropdown list */
