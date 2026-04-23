@@ -143,14 +143,38 @@ export function HeroSection() {
               {HERO.greeting}
             </motion.h1>
 
-            <div className="mb-4 text-xl font-medium text-gray-700 lg:text-2xl">
+            <div className="mb-4 text-xl font-medium text-stone-900 lg:text-2xl">
               <AnimatedTagline text={HERO.tagline} delay={0.1} />
             </div>
 
-            <div className="text-lg leading-relaxed text-gray-500">
+            <div className="text-lg leading-relaxed text-stone-700">
               <AnimatedText text={HERO.description} delay={0.3} />
             </div>
           </div>
+
+          {/* Mobile image — top half only, below text */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 0.4,
+            }}
+            className="mt-10 block lg:hidden"
+          >
+            <div className="relative h-72 w-full overflow-hidden rounded-2xl">
+              <Image
+                src={HERO.image}
+                alt="Daniel Oweibo"
+                fill
+                className="object-cover object-top"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+                priority
+              />
+            </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>
