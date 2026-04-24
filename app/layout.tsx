@@ -1,45 +1,12 @@
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
 import { grotaFont, jakartaFont, tiktokFont, momoFont } from "@/lib/fonts";
+import { siteMetadata } from "@/lib/metadata";
 import { LenisProvider } from "@/providers/lenis";
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Daniel Oweibo — Fullstack Platform Developer",
-  description:
-    "Fullstack developer obsessed with building platforms and scaling infrastructure. React, Next.js, Golang, Node.js and more.",
-  openGraph: {
-    title: "Daniel Oweibo — Fullstack Platform Developer",
-    description:
-      "Fullstack developer obsessed with building platforms and scaling infrastructure.",
-    url: "https://danieloweibo.com",
-    siteName: "Daniel Oweibo",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Daniel Oweibo — Fullstack Platform Developer",
-    creator: "@danoweibo",
-  },
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
   children,
@@ -51,6 +18,24 @@ export default function RootLayout({
       lang="en"
       className={`${momoFont.variable} ${grotaFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Daniel Oweibo",
+              url: "https://dvnlcorp.com",
+              jobTitle: "Fullstack Platform Developer",
+              sameAs: [
+                "https://linkedin.com/in/danoweibo",
+                "https://github.com/danoweibo",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">
         <LenisProvider>
           <Navbar />
