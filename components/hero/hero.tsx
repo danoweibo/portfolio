@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import Image from "next/image";
-import { HERO } from "@/components/hero/constants";
+import { Hero } from "@/components/hero/constants";
 import LetterGlitch from "@/components/ui/letter-glitch";
 
 function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {
@@ -74,7 +74,7 @@ function AnimatedTagline({
 function HeroImageSkeleton() {
   return (
     <div className="absolute inset-0 overflow-hidden rounded-2xl bg-gray-200">
-      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.6s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.6s_infinite] bg-linear-to-r from-transparent via-white/60 to-transparent" />
     </div>
   );
 }
@@ -127,7 +127,7 @@ export function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 {!desktopLoaded && <HeroImageSkeleton />}
                 <Image
-                  src={HERO.image}
+                  src={Hero.image}
                   alt="Daniel Oweibo"
                   fill
                   className={`object-cover object-[50%_0%] transition-opacity duration-500 ${
@@ -153,15 +153,15 @@ export function HeroSection() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="mb-4 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl"
             >
-              {HERO.greeting}
+              {Hero.greeting}
             </motion.h1>
 
             <div className="mb-2 text-xl font-medium text-stone-900 lg:text-2xl">
-              <AnimatedTagline text={HERO.tagline} delay={0.1} />
+              <AnimatedTagline text={Hero.tagline} delay={0.1} />
             </div>
 
             <div className="text-md leading-relaxed font-medium text-stone-700">
-              <AnimatedText text={HERO.description} delay={0.3} />
+              <AnimatedText text={Hero.description} delay={0.3} />
             </div>
 
             {/* Mobile image — grows to fill remaining height */}
@@ -180,7 +180,7 @@ export function HeroSection() {
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 {!mobileLoaded && <HeroImageSkeleton />}
                 <Image
-                  src={HERO.image}
+                  src={Hero.image}
                   alt="Daniel Oweibo"
                   fill
                   className={`object-cover object-[50%_0%] transition-opacity duration-500 ${

@@ -1,6 +1,6 @@
 import { PortfolioHero } from "@/lib/types";
 
-export const HERO: PortfolioHero = {
+export const Hero: PortfolioHero = {
   greeting: "Hey, I'm Daniel.",
   tagline:
     "Fullstack Developer obsessed with building platforms and scaling infrastructure!",

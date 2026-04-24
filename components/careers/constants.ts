@@ -1,6 +1,6 @@
 import { PortfolioCareer } from "@/lib/types";
 
-export const CAREERS: PortfolioCareer[] = [
+export const Careers: PortfolioCareer[] = [
   {
     id: "spacetrade",
     role: "Senior Fullstack Engineer",

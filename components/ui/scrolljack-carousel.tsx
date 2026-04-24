@@ -17,7 +17,7 @@ function ImageWithSkeleton({ src, alt }: { src: string; alt: string }) {
       {/* Shimmer skeleton */}
       {!loaded && (
         <div className="absolute inset-0 overflow-hidden rounded-2xl bg-gray-200">
-          <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.6s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+          <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.6s_infinite] bg-linear-to-r from-transparent via-white/60 to-transparent" />
         </div>
       )}
 

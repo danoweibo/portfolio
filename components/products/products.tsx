@@ -3,12 +3,12 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
-import { PRODUCTS } from "@/components/products/constants";
+import { Products } from "@/components/products/constants";
 import { AnimatedHeading } from "@/components/ui/animated-heading";
 import { ScrolljackCarousel } from "@/components/ui/scrolljack-carousel";
 
 interface ProductInfoProps {
-  product: (typeof PRODUCTS)[0];
+  product: (typeof Products)[0];
 }
 
 function ProductLogo({ src, alt }: { src: string; alt: string }) {
@@ -129,7 +129,7 @@ export function ProductsSection() {
         </motion.p>
       </div>
 
-      {PRODUCTS.map((product) => (
+      {Products.map((product) => (
         <div key={product.id}>
           {/* Desktop: Two-pane sticky layout */}
           <div

@@ -1,6 +1,6 @@
 import { PortfolioProducts } from "@/lib/types";
 
-export const PRODUCTS: PortfolioProducts[] = [
+export const Products: PortfolioProducts[] = [
   {
     id: "bullioner",
     icon: "/images/products/bullioner.webp",

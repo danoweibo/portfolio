@@ -7,15 +7,10 @@
   --animate-shimmer: shimmer 1.5s linear infinite;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-bushman: var(--font-bushman);
-  --font-dm: var(--font-dm);
-  --font-graves: var(--font-graves);
   --font-grota: var(--font-grota);
-  --font-passion: var(--font-passion);
   --font-jakarta: var(--font-jakarta);
   --font-tiktok: var(--font-tiktok);
   --font-momo: var(--font-momo);
-  --font-playfair-display: var(--font-playfair-display);
 }
 
 :root {

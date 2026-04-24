@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { useRef, useEffect } from "react";
 
 const LetterGlitch = ({

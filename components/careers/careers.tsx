@@ -3,13 +3,13 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import Image from "next/image";
-import { CAREERS } from "@/components/careers/constants";
+import { Careers } from "@/components/careers/constants";
 import { EmailIcon } from "@/components/icons";
 import { AnimatedHeading } from "@/components/ui/animated-heading";
 import { ScrolljackCarousel } from "@/components/ui/scrolljack-carousel";
 
 interface CareerEntryProps {
-  career: (typeof CAREERS)[0];
+  career: (typeof Careers)[0];
 }
 
 // Shimmer skeleton for the banner while image loads
@@ -132,7 +132,7 @@ export function CareersSection() {
       <div className="mx-auto max-w-5xl">
         <AnimatedHeading text="Career" />
         <div className="mt-16">
-          {CAREERS.map((career) => (
+          {Careers.map((career) => (
             <CareerEntry key={career.id} career={career} />
           ))}
         </div>

@@ -1,16 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/navbar";
-import {
-  bushmanFont,
-  dmFont,
-  gravesFont,
-  grotaFont,
-  passionFont,
-  jakartaFont,
-  tiktokFont,
-  playfairFont,
-  momoFont,
-} from "@/lib/fonts";
+import { grotaFont, jakartaFont, tiktokFont, momoFont } from "@/lib/fonts";
 import { LenisProvider } from "@/providers/lenis";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -59,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bushmanFont.variable} ${dmFont.variable} ${gravesFont.variable} ${momoFont.variable} ${grotaFont.variable} ${passionFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} ${playfairFont.variable} h-full antialiased`}
+      className={`${momoFont.variable} ${grotaFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <LenisProvider>
