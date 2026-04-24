@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 import Image from "next/image";
 import { HERO } from "@/components/hero/constants";
@@ -24,6 +24,7 @@ function AnimatedText({ text, delay = 0 }: { text: string; delay?: number }) {
             ease: "easeOut",
           }}
           style={{ display: "inline-block", marginRight: "0.25em" }}
+          className="tracking-tight"
         >
           {word}
         </motion.span>
@@ -42,8 +43,6 @@ function AnimatedTagline({
   const words = text.split(" ");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-10% 0px -10% 0px" });
-
-  // "Fullstack developer" = first 2 words
   const boldCount = 2;
 
   return (
@@ -63,6 +62,7 @@ function AnimatedTagline({
             marginRight: "0.25em",
             fontWeight: i < boldCount ? 700 : 400,
           }}
+          className="font-tiktok"
         >
           {word}
         </motion.span>
@@ -71,9 +71,20 @@ function AnimatedTagline({
   );
 }
 
+function HeroImageSkeleton() {
+  return (
+    <div className="absolute inset-0 overflow-hidden rounded-2xl bg-gray-200">
+      <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.6s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+    </div>
+  );
+}
+
 export function HeroSection() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.4], [0, -60]);
+
+  const [desktopLoaded, setDesktopLoaded] = useState(false);
+  const [mobileLoaded, setMobileLoaded] = useState(false);
 
   const imageRef = useRef(null);
   const imageInView = useInView(imageRef, {
@@ -88,8 +99,7 @@ export function HeroSection() {
   });
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#f5f0e8]">
-      {/* LetterGlitch as full-section background */}
+    <section className="relative h-screen overflow-hidden bg-[#f5f0e8]">
       <div className="absolute inset-0 z-0">
         <LetterGlitch
           glitchColors={["#e9e4dd", "#d5d1ca"]}
@@ -100,77 +110,88 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Content sits above the glitch */}
       <motion.div
         style={{ y }}
-        className="relative z-10 container mx-auto px-6 pt-32 pb-24 lg:pt-40 lg:pb-32"
+        className="relative z-10 container mx-auto h-full px-6"
       >
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex h-full flex-col lg:flex-row lg:items-center lg:gap-16">
           {/* Left column — Image (desktop only) */}
           <motion.div
             ref={imageRef}
             initial={{ opacity: 0, y: 60 }}
             animate={imageInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="hidden lg:block lg:w-1/2"
+            className="hidden lg:block lg:h-full lg:w-1/2"
           >
-            <Image
-              src={HERO.image}
-              alt="Daniel Oweibo"
-              width={480}
-              height={560}
-              className="h-auto w-full rounded-2xl object-cover"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-              priority
-            />
+            <div className="relative flex h-full w-full items-end pt-16">
+              <div className="relative h-full w-full overflow-hidden rounded-2xl">
+                {!desktopLoaded && <HeroImageSkeleton />}
+                <Image
+                  src={HERO.image}
+                  alt="Daniel Oweibo"
+                  fill
+                  className={`object-cover object-[50%_0%] transition-opacity duration-500 ${
+                    desktopLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority
+                  onLoad={() => setDesktopLoaded(true)}
+                />
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right column — Text */}
-          <div ref={textRef} className="flex flex-col justify-center lg:w-1/2">
+          {/* Right column — Text + mobile image */}
+          <div
+            ref={textRef}
+            className="flex h-full flex-col pt-32 pb-0 lg:w-1/2 lg:justify-center lg:pt-0"
+          >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={
                 textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mb-6 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl"
+              className="mb-4 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl"
             >
               {HERO.greeting}
             </motion.h1>
 
-            <div className="mb-4 text-xl font-medium text-stone-900 lg:text-2xl">
+            <div className="mb-2 text-xl font-medium text-stone-900 lg:text-2xl">
               <AnimatedTagline text={HERO.tagline} delay={0.1} />
             </div>
 
-            <div className="text-lg leading-relaxed text-stone-700">
+            <div className="text-md leading-relaxed font-medium text-stone-700">
               <AnimatedText text={HERO.description} delay={0.3} />
             </div>
-          </div>
 
-          {/* Mobile image — top half only, below text */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
-              delay: 0.4,
-            }}
-            className="mt-10 block lg:hidden"
-          >
-            <div className="relative h-72 w-full overflow-hidden rounded-2xl">
-              <Image
-                src={HERO.image}
-                alt="Daniel Oweibo"
-                fill
-                className="object-cover object-top"
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-                priority
-              />
-            </div>
-          </motion.div>
+            {/* Mobile image — grows to fill remaining height */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={
+                textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+              }
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.4,
+              }}
+              className="mt-8 min-h-0 flex-1 lg:hidden"
+            >
+              <div className="relative h-full w-full overflow-hidden rounded-2xl">
+                {!mobileLoaded && <HeroImageSkeleton />}
+                <Image
+                  src={HERO.image}
+                  alt="Daniel Oweibo"
+                  fill
+                  className={`object-cover object-[50%_0%] transition-opacity duration-500 ${
+                    mobileLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority
+                  onLoad={() => setMobileLoaded(true)}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>

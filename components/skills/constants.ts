@@ -1,6 +1,6 @@
 import { PortfolioSkills } from "@/lib/types";
 
-export const SKILLS: PortfolioSkills[] = [
+export const Skills: PortfolioSkills[] = [
   { label: "React", icon: "/images/simpleicons/react.svg" },
   { label: "Next.js", icon: "/images/simpleicons/nextdotjs.svg" },
   { label: "Nuxt.js", icon: "/images/simpleicons/nuxt.svg" },
@@ -14,6 +14,7 @@ export const SKILLS: PortfolioSkills[] = [
   { label: "Express", icon: "/images/simpleicons/express.svg" },
   { label: "NestJS", icon: "/images/simpleicons/nestjs.svg" },
   { label: "Python", icon: "/images/simpleicons/python.svg" },
+  { label: "FastAPI", icon: "/images/simpleicons/fastapi.svg" },
   { label: "Spring Boot", icon: "/images/simpleicons/springboot.svg" },
   { label: "ASP.NET", icon: "/images/simpleicons/dotnet.svg" },
   { label: "PostgreSQL", icon: "/images/simpleicons/postgresql.svg" },

@@ -63,7 +63,7 @@ export function FooterSection() {
             <motion.p
               animate={contentInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="font-passion mt-3 text-3xl font-medium text-gray-900"
+              className="font-momo mt-3 text-2xl font-medium text-gray-900"
             >
               {FOOTER.tagline}
             </motion.p>
@@ -93,7 +93,10 @@ export function FooterSection() {
 
         {/* Desktop copyright */}
         <p className="mt-8 hidden text-right text-xs text-gray-400 lg:block">
-          {FOOTER.copyright}
+          {FOOTER.copyright.base}{" "}
+          <strong className="font-medium text-gray-500">
+            {FOOTER.copyright.role}
+          </strong>
         </p>
 
         {/* Mobile layout */}
@@ -118,7 +121,7 @@ export function FooterSection() {
           <motion.p
             animate={contentInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-passion mt-3 text-2xl font-medium text-gray-900"
+            className="font-momo mt-3 text-xl font-medium text-gray-900"
           >
             {FOOTER.tagline}
           </motion.p>
@@ -143,7 +146,12 @@ export function FooterSection() {
           </div>
 
           {/* Mobile copyright */}
-          <p className="mt-8 text-xs text-gray-400">{FOOTER.copyright}</p>
+          <p className="mt-8 text-xs text-gray-400">
+            {FOOTER.copyright.base}{" "}
+            <strong className="font-medium text-gray-500">
+              {FOOTER.copyright.role}
+            </strong>
+          </p>
         </div>
       </div>
     </motion.footer>

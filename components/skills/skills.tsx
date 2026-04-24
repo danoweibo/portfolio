@@ -2,16 +2,16 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { SKILLS } from "@/components/skills/constants";
+import { Skills } from "@/components/skills/constants";
 import { AnimatedHeading } from "@/components/ui/animated-heading";
 
-const SPEED = 80; // px/s at full speed
-const SMOOTH_TAU = 0.4; // seconds — controls how gently it eases
+const SPEED = 80;
+const SMOOTH_TAU = 0.4;
 
 export function SkillsSection() {
-  const items = [...SKILLS, ...SKILLS];
+  const items = [...Skills, ...Skills];
   const trackRef = useRef<HTMLDivElement>(null);
-  const isHoveredRef = useRef(false); // ← ref, not state
+  const isHoveredRef = useRef(false);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -20,14 +20,12 @@ export function SkillsSection() {
     let rafId: number;
     let lastTimestamp: number | null = null;
     let offset = 0;
-    let velocity = SPEED; // start at full speed
-
+    let velocity = SPEED;
     const animate = (timestamp: number) => {
       if (lastTimestamp === null) lastTimestamp = timestamp;
       const dt = Math.min((timestamp - lastTimestamp) / 1000, 0.1);
       lastTimestamp = timestamp;
 
-      // Read hover state from ref — no re-render, no effect restart
       const targetVelocity = isHoveredRef.current ? 0 : SPEED;
 
       const easingFactor = 1 - Math.exp(-dt / SMOOTH_TAU);
@@ -44,10 +42,10 @@ export function SkillsSection() {
 
     rafId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafId);
-  }, []); // ← empty deps, loop runs once forever
+  }, []);
 
   return (
-    <section id="skills" className="overflow-hidden bg-[#fafafa] py-24">
+    <section id="Skills" className="overflow-hidden bg-[#fafafa] py-24">
       <div className="mx-auto mb-16 max-w-5xl px-6">
         <AnimatedHeading text="Skills" />
       </div>
@@ -71,7 +69,7 @@ export function SkillsSection() {
           {items.map((skill, i) => (
             <div
               key={`${skill.label}-${i}`}
-              className="flex min-w-[72px] flex-col items-center gap-2"
+              className="flex min-w-18 flex-col items-center gap-2"
             >
               <div className="relative h-12 w-12">
                 <Image

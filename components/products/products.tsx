@@ -53,7 +53,7 @@ function ProductInfo({ product }: ProductInfoProps) {
       <ProductLogo src={product.icon} alt={product.name} />
 
       <h3 className="mb-3 text-3xl font-bold text-gray-900">{product.name}</h3>
-      <p className="mb-8 text-base leading-relaxed text-gray-500">
+      <p className="font-tiktok mb-8 text-base leading-relaxed text-gray-500">
         {product.description}
       </p>
 
@@ -69,7 +69,7 @@ function ProductInfo({ product }: ProductInfoProps) {
               delay: 0.15 + i * 0.07,
               ease: "easeOut",
             }}
-            className="flex items-center gap-3 text-sm font-medium text-gray-700"
+            className="font-grota flex items-center gap-3 text-sm font-medium text-gray-700"
           >
             <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-900 text-xs text-white">
               ✓
@@ -122,7 +122,7 @@ export function ProductsSection() {
           initial={{ opacity: 0 }}
           animate={headerInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-4 max-w-2xl text-lg text-gray-500"
+          className="font-tiktok mt-4 max-w-2xl text-lg text-gray-500"
         >
           Showcasing top projects from my portfolio, these are high-impact
           products used by thousands today!

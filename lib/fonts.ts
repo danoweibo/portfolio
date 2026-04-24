@@ -329,6 +329,18 @@ export const tiktokFont = localFont({
   display: "swap",
 });
 
+export const momoFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/momosignature-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-momo",
+  display: "swap",
+});
+
 export const playfairFont = localFont({
   src: [
     // Regular

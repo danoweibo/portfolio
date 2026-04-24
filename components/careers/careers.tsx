@@ -66,7 +66,9 @@ function CareerEntry({ career }: CareerEntryProps) {
         <div>
           <h3 className="text-2xl font-bold text-gray-900">{career.role}</h3>
           <h6 className="text-lg text-gray-500">{career.company}</h6>
-          <p className="text-xs font-medium text-gray-500">{career.duration}</p>
+          <p className="font-grota text-xs font-medium text-gray-500">
+            {career.duration}
+          </p>
         </div>
         <EmailIcon className="h-8 w-8 text-[#9ca3af]" />
       </div>
@@ -82,7 +84,7 @@ function CareerEntry({ career }: CareerEntryProps) {
             initial={{ opacity: 0, y: 16 }}
             animate={listInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
-            className="flex items-start gap-3 text-sm text-gray-600"
+            className="font-tiktok flex items-start gap-3 text-sm text-gray-600"
           >
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
             {item}

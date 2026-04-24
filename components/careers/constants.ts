@@ -9,7 +9,7 @@ export const CAREERS: PortfolioCareer[] = [
     banner: "/images/careers/spacetrade.webp",
     contributions: [
       "Hardened wallet address handling by implementing clipboard sanitization and regex-based format validation across intents preventing spoofed or malformed addresses from reaching the transaction layer.",
-      "Optimized app bundle and lazy-loaded heavy screens, reducing initial load time by ~30% and improving perceived performance on low-bandwidth networks.",
+      "Optimized app bundle and lazy-loaded heavy screens, reducing initial load time by ~30% and introduced efficient caching which then improved perceived performance even more on low-bandwidth networks.",
       "Collaborated with design and product teams across 2-week sprint cycles, shipping 4+ major features between Q3 2024 and Q1 2025.",
       "Implemented swift webhooks handling 5k+ daily transactions, executing asset conversions in under 6 seconds on average.",
     ],

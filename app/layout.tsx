@@ -9,6 +9,7 @@ import {
   jakartaFont,
   tiktokFont,
   playfairFont,
+  momoFont,
 } from "@/lib/fonts";
 import { LenisProvider } from "@/providers/lenis";
 import type { Metadata } from "next";
@@ -58,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bushmanFont.variable} ${dmFont.variable} ${gravesFont.variable} ${grotaFont.variable} ${passionFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} ${playfairFont.variable} h-full antialiased`}
+      className={`${bushmanFont.variable} ${dmFont.variable} ${gravesFont.variable} ${momoFont.variable} ${grotaFont.variable} ${passionFont.variable} ${jakartaFont.variable} ${tiktokFont.variable} ${playfairFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <LenisProvider>

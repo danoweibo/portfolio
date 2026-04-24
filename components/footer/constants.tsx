@@ -29,5 +29,8 @@ export const FOOTER: PortfolioFooter = {
       url: "https://www.youtube.com/@danoweibo",
     },
   ],
-  copyright: "Daniel Oweibo © 2026, Fullstack Platform Developer.",
+  copyright: {
+    base: "Daniel Oweibo © 2026,",
+    role: "Fullstack Platform Developer.",
+  },
 };

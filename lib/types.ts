@@ -59,5 +59,8 @@ export interface PortfolioFooter {
     handle: string;
     url: string;
   }[];
-  copyright: string;
+  copyright: {
+    base: string;
+    role: string;
+  };
 }
