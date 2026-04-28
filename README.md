@@ -8,7 +8,7 @@
 
 The production site represents my work, skills, projects, and professional brand.
 
-🔗 **[View Live Site →](https://yourdomain.com)**
+🔗 **[View Live Site →](https://dvnlcorp.com)**
 
 ---
 
@@ -30,10 +30,10 @@ The production site represents my work, skills, projects, and professional brand
 
 ### ✨ Motion & UX
 
-| Technology                                      | Purpose                  |
-| ----------------------------------------------- | ------------------------ |
-| [Framer Motion](https://www.framer.com/motion/) | Animations & transitions |
-| [Lenis](https://lenis.darkroom.engineering/)    | Smooth scrolling         |
+| Technology                                   | Purpose                  |
+| -------------------------------------------- | ------------------------ |
+| [Framer Motion](https://motion.dev/)         | Animations & transitions |
+| [Lenis](https://lenis.darkroom.engineering/) | Smooth scrolling         |
 
 ### 🔧 Tooling
 
@@ -69,7 +69,7 @@ The production site represents my work, skills, projects, and professional brand
 ### Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/danoweibo/portfolio.git
 cd portfolio
 ```
 
